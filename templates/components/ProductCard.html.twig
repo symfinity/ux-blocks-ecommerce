@@ -1,0 +1,15 @@
+<article
+    data-ui-role="product-card"
+    data-ui-fragment="blocks.shop.product-card"
+    {{ attributes }}
+>
+    {% if badge %}<span data-ui-role="badge">{{ badge }}</span>{% endif %}
+    {% if imageUrl %}<img src="{{ imageUrl }}" alt="" />{% endif %}
+    {% if href %}
+        <a href="{{ href }}"><h3>{{ title }}</h3></a>
+    {% else %}
+        <h3>{{ title }}</h3>
+    {% endif %}
+    {% if price %}<p data-ui-role="price">{{ price }}</p>{% endif %}
+    {% block content %}{% endblock %}
+</article>

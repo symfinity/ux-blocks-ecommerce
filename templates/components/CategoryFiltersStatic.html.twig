@@ -1,0 +1,19 @@
+<aside
+    data-ui-role="category-filters-static"
+    data-ui-fragment="blocks.shop.category-filters-static"
+    {{ attributes }}
+>
+    <form method="get" action="#">
+        {% for filter in filters %}
+            <label>
+                <input
+                    type="{{ filter.type|default('checkbox') }}"
+                    name="{{ filter.name }}"
+                    {% if filter.checked|default(false) %}checked{% endif %}
+                />
+                {{ filter.label }}
+            </label>
+        {% endfor %}
+    </form>
+    {% block content %}{% endblock %}
+</aside>

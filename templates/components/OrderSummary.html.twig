@@ -1,0 +1,13 @@
+<section
+    data-ui-role="order-summary"
+    data-ui-fragment="blocks.shop.order-summary"
+    {{ attributes }}
+>
+    <dl>
+        <dt>Subtotal</dt><dd>{{ subtotal }}</dd>
+        {% if shipping %}<dt>Shipping</dt><dd>{{ shipping }}</dd>{% endif %}
+        {% if tax %}<dt>Tax</dt><dd>{{ tax }}</dd>{% endif %}
+        <dt>Total</dt><dd>{{ total }}</dd>
+    </dl>
+    {% block content %}{% endblock %}
+</section>

@@ -1,0 +1,25 @@
+<section
+    data-ui-role="product-overview"
+    data-ui-fragment="blocks.shop.product-overview"
+    {{ attributes }}
+>
+    {% if images|length > 0 %}
+        <div data-ui-role="product-gallery">
+            {% for image in images %}
+                <img src="{{ image }}" alt="" />
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if title %}<h1>{{ title }}</h1>{% endif %}
+    {% if description %}<p>{{ description }}</p>{% endif %}
+    {% if price %}<p data-ui-role="price">{{ price }}</p>{% endif %}
+    {% if options|length > 0 %}
+        <ul>
+            {% for option in options %}
+                <li>{{ option.label }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <twig:Button>{{ addToCartLabel }}</twig:Button>
+    {% block content %}{% endblock %}
+</section>
