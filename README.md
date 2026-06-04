@@ -1,70 +1,53 @@
-# symfinity/ux-blocks-ecommerce
+<div align="center">
 
-Chameleon UX Blocks Ecommerce — **V0** shop section library with `blocks.shop.*` fragment prefix.
+# Ux Blocks Ecommerce
 
-**Planning:** symfinity **027** · **Registry:** [component-inventory](../../../specs/symfinity/symfinity/27-ux-blocks-ecommerce/contracts/component-inventory.md)
+### Symfinity UX Blocks Ecommerce — shop section catalog with blocks.shop fragments
+
+[![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
+[![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
+
+<br/>
+[![PHPUnit](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml)
+[![Coverage](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml)
+[![PHPStan](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml)
+<br/>
+[![Psalm](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml)
+[![Infection](https://github.com/symfinity/symfinity/actions/workflows/infection.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/infection.yml)
+[![Code Style](https://img.shields.io/badge/code%20style-CS%20Fixer-5c4dbc?style=flat)](https://github.com/symfinity/symfinity/actions/workflows/php-cs-fixer.yml)
+<br/>
+[![Release](https://img.shields.io/packagist/v/symfinity/ux-blocks-ecommerce.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-ecommerce)
+[![Downloads](https://img.shields.io/packagist/dt/symfinity/ux-blocks-ecommerce.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-ecommerce)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
+</div>
+
+---
+
+## Documentation
+
+| Topic | Page |
+|-------|------|
+| Components | [docs/components.md](docs/components.md) |
+| Configuration | [docs/configuration.md](docs/configuration.md) |
+| Index | [docs/index.md](docs/index.md) |
+| Installation | [docs/installation.md](docs/installation.md) |
+| Quickstart | [docs/quickstart.md](docs/quickstart.md) |
+| Reference | [docs/reference.md](docs/reference.md) |
+| Troubleshooting | [docs/troubleshooting.md](docs/troubleshooting.md) |
+| Upgrade | [docs/upgrade.md](docs/upgrade.md) |
+| Usage | [docs/usage.md](docs/usage.md) |
+| Component: Readme | [docs/components/README.md](docs/components/README.md) |
+
+## Requirements
+
+- PHP 8.2+
+- Symfony 7.4+ (Flex recipe when available)
 
 ## Install
 
 ```bash
 composer require symfinity/ux-blocks-ecommerce
-```
-
-Requires Symfony **7.4+**, `symfinity/ux-blocks-core`, `symfony/ux-twig-component` ^2, `symfony/stimulus-bundle` (cart drawer only). Does **not** require `symfony/ux-toolkit`, Tailwind npm, or `symfinity/ui-kernel`.
-
-Optional cross-sell:
-
-```bash
-composer require symfinity/ux-blocks-marketing  # suggest only
-```
-
-Register the bundle:
-
-```php
-// config/bundles.php
-Symfinity\UxBlocksEcommerce\SymfinityUxBlocksEcommerceBundle::class => ['all' => true],
-```
-
-## Interaction profile
-
-`symfinity/ux-blocks-ecommerce` is a **V0** shop section library. Default stories use **`nat`** (native HTML + Chameleon kernel CSS; no package Stimulus on nine roles). **`stl`** applies only to **`cart-drawer-quickview`** (slide-over cart / quick-view micro-UX). Sections **compose** `symfinity/ux-blocks-core` primitives; they do not replace them. Optional **`symfinity/ux-blocks-marketing`** is suggested for landing cross-sell, not required.
-
-| Token | In this package |
-|-------|-----------------|
-| `nat` | All roles except cart drawer |
-| `act` | Optional on links/buttons via **007** — not required for v0 demos |
-| `stl` | `cart-drawer-quickview` only |
-| `live` | **MUST NOT** in v0 atoms |
-| `up` | Document only if a role later defers to `symfony/ux-*` — none in v0 |
-
-## Component inventory
-
-| Role | Twig | Category | Interaction | Fragment | Status | REF |
-|------|------|----------|-------------|----------|--------|-----|
-| `product-overview` | `ProductOverview` | Ecommerce | `nat` | `blocks.shop.product-overview` | shipped | Tailwind Ecommerce |
-| `product-list-section` | `ProductListSection` | Ecommerce | `nat` | `blocks.shop.product-list-section` | shipped | Tailwind Ecommerce |
-| `product-card` | `ProductCard` | Ecommerce | `nat` | `blocks.shop.product-card` | shipped | Tailwind Ecommerce |
-| `shopping-cart-layout` | `ShoppingCartLayout` | Ecommerce | `nat` | `blocks.shop.shopping-cart-layout` | shipped | Tailwind Ecommerce |
-| `checkout-form-section` | `CheckoutFormSection` | Ecommerce | `nat` | `blocks.shop.checkout-form-section` | shipped | Tailwind Ecommerce |
-| `category-filters-static` | `CategoryFiltersStatic` | Ecommerce | `nat` | `blocks.shop.category-filters-static` | shipped | Tailwind Ecommerce |
-| `order-summary` | `OrderSummary` | Ecommerce | `nat` | `blocks.shop.order-summary` | shipped | Tailwind Ecommerce |
-| `order-history` | `OrderHistory` | Ecommerce | `nat` | `blocks.shop.order-history` | shipped | Tailwind Ecommerce |
-| `promo-incentives` | `PromoIncentives` | Ecommerce | `nat` | `blocks.shop.promo-incentives` | shipped | Tailwind Ecommerce |
-| `cart-drawer-quickview` | `CartDrawerQuickview` | Ecommerce | `stl` | `blocks.shop.cart-drawer-quickview` | shipped | Tailwind Ecommerce |
-
-## Progressive enhancement (cart drawer)
-
-| State | Behavior |
-|-------|----------|
-| JS + Stimulus active | Drawer opens over content; focus trap active; Escape closes |
-| JS disabled | Use `ShoppingCartLayout` on the page; drawer trigger is a no-op without JS |
-
-## Dogfood
-
-`ux-blocks-demo` exposes **`GET /shop`** when this package is installed.
-
-```bash
-make dogfood-serve SLUG=ux-blocks-demo
 ```
 
 ## Test

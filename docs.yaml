@@ -1,0 +1,27 @@
+composer_name: symfinity/ux-blocks-ecommerce
+package_major: "0.x"
+handbook_family: ux-blocks
+
+sidebar:
+  - components
+  - configuration
+  - installation
+  - quickstart
+  - reference
+  - troubleshooting
+  - upgrade
+  - usage
+
+slices:
+  - symfony: "7.4"
+    sources:
+      - components.md
+      - components/README.md
+      - configuration.md
+      - index.md
+      - installation.md
+      - quickstart.md
+      - reference.md
+      - troubleshooting.md
+      - upgrade.md
+      - usage.md
