@@ -1,0 +1,13 @@
+schema: showcase-examples/1.0
+role: order-summary
+twig_name: OrderSummary
+requires_stimulus: false
+sections:
+  - id: demo
+    title: Example
+    layout: stack
+    items:
+      - variant: default
+        label: Order Summary
+        props: { subtotal: '€128.00', shipping: '€5.00', tax: '€24.32', total: '€157.32' }
+        render_partial: showcase/_compounds/by_twig.html.twig
