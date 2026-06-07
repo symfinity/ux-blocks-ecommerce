@@ -5,12 +5,15 @@ declare(strict_types=1);
 namespace Symfinity\UxBlocksEcommerce\Tests\Integration;
 
 use Symfinity\UxBlocksCore\SymfinityUxBlocksCoreBundle;
+use Symfinity\UxBlocksExtended\SymfinityUxBlocksExtendedBundle;
+use Symfinity\UxBlocksLive\SymfinityUxBlocksLiveBundle;
 use Symfinity\UxBlocksEcommerce\SymfinityUxBlocksEcommerceBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel;
+use Symfony\UX\StimulusBundle\StimulusBundle;
 use Symfony\UX\TwigComponent\TwigComponentBundle;
 
 final class UxBlocksEcommerceTestKernel extends Kernel
@@ -32,8 +35,11 @@ final class UxBlocksEcommerceTestKernel extends Kernel
         return [
             new FrameworkBundle(),
             new TwigBundle(),
+            new StimulusBundle(),
             new TwigComponentBundle(),
             new SymfinityUxBlocksCoreBundle(),
+            new SymfinityUxBlocksExtendedBundle(),
+            new SymfinityUxBlocksLiveBundle(),
             new SymfinityUxBlocksEcommerceBundle(),
         ];
     }
@@ -45,7 +51,30 @@ final class UxBlocksEcommerceTestKernel extends Kernel
             'test' => true,
             'router' => ['utf8' => true],
             'php_errors' => ['log' => false],
+            'form' => false,
         ]);
+
+        $container->extension('twig_component', [
+            'defaults' => [
+                'Symfinity\\UxBlocksCore\\' => [
+                    'template_directory' => 'components',
+                    'name_prefix' => '',
+                ],
+                'Symfinity\\UxBlocksExtended\\' => [
+                    'template_directory' => 'components',
+                    'name_prefix' => '',
+                ],
+                'Symfinity\\UxBlocksLive\\' => [
+                    'template_directory' => 'components',
+                    'name_prefix' => '',
+                ],
+            ],
+        ]);
+
+        $container->services()
+            ->set('twig.extension.form', StubFormTwigExtension::class)
+            ->tag('twig.extension')
+            ->public();
 
         $container->extension('twig', [
             'paths' => [
