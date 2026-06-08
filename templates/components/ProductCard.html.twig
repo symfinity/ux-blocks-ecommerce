@@ -3,13 +3,25 @@
     data-ui-fragment="blocks.shop.product-card"
     {{ attributes }}
 >
-    {% if badge %}<span data-ui-role="badge">{{ badge }}</span>{% endif %}
-    {% if imageUrl %}<img src="{{ imageUrl }}" alt="" />{% endif %}
-    {% if href %}
-        <a href="{{ href }}"><h3>{{ title }}</h3></a>
-    {% else %}
-        <h3>{{ title }}</h3>
+    {% if badge %}
+        <span data-ui-role="badge" data-ui-variant="outline">{{ badge }}</span>
     {% endif %}
-    {% if price %}<p data-ui-role="price">{{ price }}</p>{% endif %}
+    {% if imageUrl %}
+        <figure data-ui-slot="media">
+            <img src="{{ imageUrl }}" alt="" />
+        </figure>
+    {% endif %}
+    <div data-ui-role="stack" data-ui-gap="xs">
+        {% if href %}
+            <a href="{{ href }}">
+                <h3 data-ui-role="typography" data-ui-variant="h3">{{ title }}</h3>
+            </a>
+        {% else %}
+            <h3 data-ui-role="typography" data-ui-variant="h3">{{ title }}</h3>
+        {% endif %}
+        {% if price %}
+            <p data-ui-role="price">{{ price }}</p>
+        {% endif %}
+    </div>
     {% block content %}{% endblock %}
 </article>

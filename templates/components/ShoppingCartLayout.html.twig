@@ -3,24 +3,36 @@
     data-ui-fragment="blocks.shop.shopping-cart-layout"
     {{ attributes }}
 >
-    {% if items|length == 0 %}
-        <p>{{ emptyMessage }}</p>
-    {% else %}
-        <ul>
-            {% for item in items %}
-                <li>
-                    {% if item.imageUrl %}<img src="{{ item.imageUrl }}" alt="" />{% endif %}
-                    {% if item.href %}
-                        <a href="{{ item.href }}">{{ item.label }}</a>
-                    {% else %}
-                        <span>{{ item.label }}</span>
-                    {% endif %}
-                    <span data-ui-role="quantity">{{ item.quantity }}</span>
-                    <span data-ui-role="unit-price">{{ item.unitPrice }}</span>
-                    {% if item.lineTotal %}<span data-ui-role="line-total">{{ item.lineTotal }}</span>{% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    {% block content %}{% endblock %}
+    <div data-ui-slot="items">
+        {% if items|length == 0 %}
+            <p data-ui-role="typography" data-ui-variant="p">{{ emptyMessage }}</p>
+        {% else %}
+            <ul>
+                {% for item in items %}
+                    <li>
+                        {% if item.imageUrl %}
+                            <img src="{{ item.imageUrl }}" alt="" />
+                        {% endif %}
+                        <div data-ui-role="stack" data-ui-gap="xs">
+                            {% if item.href %}
+                                <a href="{{ item.href }}">{{ item.label }}</a>
+                            {% else %}
+                                <span data-ui-role="typography" data-ui-variant="strong">{{ item.label }}</span>
+                            {% endif %}
+                            <span data-ui-role="typography" data-ui-variant="small">
+                                Qty <span data-ui-role="quantity">{{ item.quantity }}</span>
+                                · <span data-ui-role="unit-price">{{ item.unitPrice }}</span>
+                            </span>
+                        </div>
+                        {% if item.lineTotal %}
+                            <span data-ui-role="line-total">{{ item.lineTotal }}</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <aside data-ui-slot="summary">
+        {% block content %}{% endblock %}
+    </aside>
 </section>
