@@ -1,5 +1,5 @@
 import { Controller } from '@hotwired/stimulus';
-import { restoreFocus, trapFocus } from '../shared/overlay-base.js';
+import { restoreFocus, trapFocus, uiZIndex } from '../shared/overlay-base.js';
 
 export default class extends Controller {
     static targets = ['trigger', 'panel', 'close', 'backdrop'];
@@ -77,10 +77,10 @@ export default class extends Controller {
         this._backdrop = document.createElement('div');
         this._backdrop.dataset.uiOverlayBackdrop = '';
         this._backdrop.hidden = false;
-        this._backdrop.style.cssText = 'position:fixed;inset:0;background:color-mix(in srgb, var(--ui-color-text, #000) 40%, transparent);z-index:calc(var(--ui-z-modal, 1000) - 1);';
+        this._backdrop.style.cssText = `position:fixed;inset:0;background:var(--ui-backdrop-color);z-index:${uiZIndex('modal-backdrop')};`;
         document.body.appendChild(this._backdrop);
         if (this.hasPanelTarget) {
-            this.panelTarget.style.zIndex = 'var(--ui-z-modal, 1000)';
+            this.panelTarget.style.zIndex = uiZIndex('modal');
             this.panelTarget.style.position = 'fixed';
             this.panelTarget.style.insetBlockStart = '0';
             this.panelTarget.style.insetInlineEnd = '0';

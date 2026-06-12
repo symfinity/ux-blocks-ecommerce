@@ -31,3 +31,10 @@ export function restoreFocus(trigger) {
         trigger.focus();
     }
 }
+
+/**
+ * @param {'dropdown'|'sticky'|'fixed'|'modal-backdrop'|'modal'|'popover'|'tooltip'|'toast'} layer
+ */
+export function uiZIndex(layer) {
+    return getComputedStyle(document.documentElement).getPropertyValue(`--ui-z-${layer}`).trim();
+}
