@@ -1,20 +1,13 @@
 <div align="center">
 
-# Ux Blocks Ecommerce
+# UX Blocks Ecommerce
 
-### Symfinity UX Blocks Ecommerce — shop section catalog with blocks.shop fragments
+### Shop section Twig components with blocks.shop fragments
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
 [![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
-
 <br/>
-[![PHPUnit](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml)
-[![Coverage](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml)
-[![PHPStan](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml)
-<br/>
-[![Psalm](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml)
-[![Infection](https://github.com/symfinity/symfinity/actions/workflows/infection.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/infection.yml)
-[![Code Style](https://img.shields.io/badge/code%20style-CS%20Fixer-5c4dbc?style=flat)](https://github.com/symfinity/symfinity/actions/workflows/php-cs-fixer.yml)
+[![CI](https://github.com/symfinity/ux-blocks-ecommerce/actions/workflows/ci.yml/badge.svg)](https://github.com/symfinity/ux-blocks-ecommerce/actions/workflows/ci.yml)
 <br/>
 [![Release](https://img.shields.io/packagist/v/symfinity/ux-blocks-ecommerce.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-ecommerce)
 [![Downloads](https://img.shields.io/packagist/dt/symfinity/ux-blocks-ecommerce.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-ecommerce)
@@ -22,52 +15,19 @@
 
 </div>
 
----
+> [!NOTE]
+> **Read-only mirror.**
+> See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
 
-## Documentation
+## Features
 
-| Topic | Page |
-|-------|------|
-| Components | [docs/components.md](docs/components.md) |
-| Configuration | [docs/configuration.md](docs/configuration.md) |
-| Index | [docs/index.md](docs/index.md) |
-| Installation | [docs/installation.md](docs/installation.md) |
-| Quickstart | [docs/quickstart.md](docs/quickstart.md) |
-| Reference | [docs/reference.md](docs/reference.md) |
-| Troubleshooting | [docs/troubleshooting.md](docs/troubleshooting.md) |
-| Upgrade | [docs/upgrade.md](docs/upgrade.md) |
-| Usage | [docs/usage.md](docs/usage.md) |
-| Component: Readme | [docs/components/README.md](docs/components/README.md) |
+- **10 shop section roles** — product cards, cart, checkout, orders, and promos
+- **Native-first (`nat`)** — marketing-style sections styled with ui-kernel tokens
+- **Registry-aligned** — `blocks.shop.*` fragment ids
+- **Explicit opt-in tier** — never pulled in by `symfinity/ux-blocks-full`
+- **Flex recipe** — bundle registration on install
 
-## Requirements
-
-- PHP 8.2+
-- Symfony 7.4+ (Flex recipe when available)
-
-## Install
-
-**Explicit opt-in** — shop sections are **never** pulled in by `ux-blocks-full`. Add this package only when you ship storefront pages. See [UX Blocks install profiles](https://github.com/symfinity/ux-blocks#install-profiles) for the full profile table.
-
-```bash
-composer require symfinity/ux-blocks-ecommerce
-```
-
-## Maintainer Sass pipeline (120)
-
-Shop section CSS is authored under `assets/scss/` and compiled via `bin/blocks-css-compile`. From product monorepo root:
-
-```bash
-cd src/symfinity
-bin/blocks-css-compile --package=ux-blocks-ecommerce --check
-bin/ux-blocks-scss-audit --package=ux-blocks-ecommerce --check
-```
-
-## Test
-
-```bash
-cd src/symfinity
-./bin/php vendor/bin/phpunit packages/ux-blocks-ecommerce/tests/
-```
+## Component inventory
 
 
 <!-- ux-blocks:registry:start -->
@@ -84,3 +44,55 @@ cd src/symfinity
 | promo-incentives | PromoIncentives | nat | `blocks.shop.promo-incentives` | shipped |
 | cart-drawer-quickview | CartDrawerQuickview | stl | `blocks.shop.cart-drawer-quickview` | shipped |
 <!-- ux-blocks:registry:end -->
+
+**Highlights:** composable product list and overview sections; checkout and order summary layouts; cart drawer quickview when interactive tier is present.
+
+Handbook: [docs/components.md](docs/components.md).
+
+## Prerequisites
+
+Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint to your project's `composer.json` (see [recipes README](https://github.com/symfinity/recipes/blob/main/README.md)) — recipes are not in Symfony's official recipe repository yet.
+
+## Installation
+
+**Explicit opt-in** — add only when you ship storefront pages. See [UX Blocks install profiles](https://github.com/symfinity/ux-blocks#install-profiles).
+
+```bash
+composer require symfinity/ux-blocks-ecommerce
+```
+
+See [Installation](docs/installation.md).
+
+## Quick Start
+
+```twig
+<twig:ProductOverview title="Classic Tee" price="29.00" />
+<twig:ProductListSection title="You may also like" />
+```
+
+See [Quick start](docs/quickstart.md) for the full walkthrough.
+
+## Documentation
+
+- **[Quick start](docs/quickstart.md)** — minimal setup path
+- **[Installation](docs/installation.md)** — Flex, dependencies, verify
+- **[Configuration](docs/configuration.md)** — bundle and app options
+- **[Components](docs/components.md)** — role index and examples
+- **[Usage](docs/usage.md)** — day-to-day patterns
+- **[Upgrade](docs/upgrade.md)** — version migrations
+
+## Requirements
+
+- PHP 8.2 or higher
+- Symfony 7.4 or 8.x
+- `symfinity/ux-blocks-core` ^0.1
+
+## Support
+
+- [GitHub Issues](https://github.com/symfinity/ux-blocks-ecommerce/issues)
+- [Security](.github/SECURITY.md)
+- [Contributing](CONTRIBUTING.md)
+
+## License
+
+[MIT](LICENSE)
