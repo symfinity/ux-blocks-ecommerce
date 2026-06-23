@@ -1,0 +1,11 @@
+@use 'lists' as *;
+
+@mixin each-shop-shell-role {
+  @each $role in $ui-shop-shell-roles {
+    [data-ui-role='#{$role}'] {
+      font-family: var(--ui-font-family-sans);
+      color: var(--ui-color-text);
+      box-sizing: border-box;
+    }
+  }
+}

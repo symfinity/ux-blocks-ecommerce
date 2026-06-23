@@ -52,9 +52,35 @@
 composer require symfinity/ux-blocks-ecommerce
 ```
 
+## Maintainer Sass pipeline (120)
+
+Shop section CSS is authored under `assets/scss/` and compiled via `bin/blocks-css-compile`. From product monorepo root:
+
+```bash
+cd src/symfinity
+bin/blocks-css-compile --package=ux-blocks-ecommerce --check
+bin/ux-blocks-scss-audit --package=ux-blocks-ecommerce --check
+```
+
 ## Test
 
 ```bash
 cd src/symfinity
 ./bin/php vendor/bin/phpunit packages/ux-blocks-ecommerce/tests/
 ```
+
+
+<!-- ux-blocks:registry:start -->
+| Role | Twig | Interaction | Fragment | Status |
+|------|------|-------------|----------|--------|
+| product-overview | ProductOverview | nat | `blocks.shop.product-overview` | shipped |
+| product-list-section | ProductListSection | nat | `blocks.shop.product-list-section` | shipped |
+| product-card | ProductCard | nat | `blocks.shop.product-card` | shipped |
+| shopping-cart-layout | ShoppingCartLayout | nat | `blocks.shop.shopping-cart-layout` | shipped |
+| checkout-form-section | CheckoutFormSection | nat | `blocks.shop.checkout-form-section` | shipped |
+| category-filters-static | CategoryFiltersStatic | nat | `blocks.shop.category-filters-static` | shipped |
+| order-summary | OrderSummary | nat | `blocks.shop.order-summary` | shipped |
+| order-history | OrderHistory | nat | `blocks.shop.order-history` | shipped |
+| promo-incentives | PromoIncentives | nat | `blocks.shop.promo-incentives` | shipped |
+| cart-drawer-quickview | CartDrawerQuickview | stl | `blocks.shop.cart-drawer-quickview` | shipped |
+<!-- ux-blocks:registry:end -->

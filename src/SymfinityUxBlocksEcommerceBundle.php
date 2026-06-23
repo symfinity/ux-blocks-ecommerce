@@ -6,6 +6,7 @@ namespace Symfinity\UxBlocksEcommerce;
 
 use Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\TwigConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class SymfinityUxBlocksEcommerceBundle extends Bundle
@@ -13,6 +14,11 @@ final class SymfinityUxBlocksEcommerceBundle extends Bundle
     public function getPath(): string
     {
         return \dirname(__DIR__);
+    }
+
+    public function getContainerExtension(): ExtensionInterface
+    {
+        return new DependencyInjection\SymfinityUxBlocksEcommerceExtension();
     }
 
     public function build(ContainerBuilder $container): void
