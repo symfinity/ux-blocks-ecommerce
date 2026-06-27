@@ -7,7 +7,7 @@ examples:
     props:
       filters:
         - label: Shirts
-          href: /shop/shirts
-          active: true
+          name: shirts
+          checked: true
         - label: Pants
-          href: /shop/pants
+          name: pants

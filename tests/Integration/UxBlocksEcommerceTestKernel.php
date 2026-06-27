@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Symfinity\UxBlocksEcommerce\Tests\Integration;
 
 use Symfinity\UxBlocksCore\SymfinityUxBlocksCoreBundle;
-use Symfinity\UxBlocksExtended\SymfinityUxBlocksExtendedBundle;
-use Symfinity\UxBlocksLive\SymfinityUxBlocksLiveBundle;
 use Symfinity\UxBlocksEcommerce\SymfinityUxBlocksEcommerceBundle;
+use Symfinity\UxBlocksMarketing\SymfinityUxBlocksMarketingBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;
@@ -38,8 +37,7 @@ final class UxBlocksEcommerceTestKernel extends Kernel
             new StimulusBundle(),
             new TwigComponentBundle(),
             new SymfinityUxBlocksCoreBundle(),
-            new SymfinityUxBlocksExtendedBundle(),
-            new SymfinityUxBlocksLiveBundle(),
+            new SymfinityUxBlocksMarketingBundle(),
             new SymfinityUxBlocksEcommerceBundle(),
         ];
     }
@@ -53,28 +51,6 @@ final class UxBlocksEcommerceTestKernel extends Kernel
             'php_errors' => ['log' => false],
             'form' => false,
         ]);
-
-        $container->extension('twig_component', [
-            'defaults' => [
-                'Symfinity\\UxBlocksCore\\' => [
-                    'template_directory' => 'components',
-                    'name_prefix' => '',
-                ],
-                'Symfinity\\UxBlocksExtended\\' => [
-                    'template_directory' => 'components',
-                    'name_prefix' => '',
-                ],
-                'Symfinity\\UxBlocksLive\\' => [
-                    'template_directory' => 'components',
-                    'name_prefix' => '',
-                ],
-            ],
-        ]);
-
-        $container->services()
-            ->set('twig.extension.form', StubFormTwigExtension::class)
-            ->tag('twig.extension')
-            ->public();
 
         $container->extension('twig', [
             'paths' => [

@@ -6,11 +6,13 @@ examples:
     section: Variants
     props:
       sections:
-        - title: Shipping
+        - id: shipping
+          title: Shipping
           fields:
             - name
             - address
-        - title: Payment
+        - id: payment
+          title: Payment
           fields:
             - card
       submitLabel: Place order
