@@ -1,30 +1,38 @@
 # Quick start
 
-## Goal
+Minimal storefront page with product overview and a related-products list.
 
-After this guide you will have {one sentence outcome}.
+## Theme CSS
 
-## Prerequisites
+For styled output, include ui-kernel generated CSS in your layout (see [Configuration](configuration.md)).
 
-[Installation](installation.md) completed.
+## Render components
 
-## Steps
+```twig
+<twig:ProductOverview
+    title="Classic Tee"
+    description="Soft cotton everyday shirt."
+    price="29.00"
+    :images="['/assets/tee-front.jpg']"
+/>
 
-### 1. Configure
-
-Minimal `config/packages/` snippet.
-
-### 2. Use in the app
-
-Minimal route, controller, or template step.
-
-## Complete example
-
-```yaml
-# minimal working snippet
+<twig:ProductListSection heading="You may also like" :columns="3" />
 ```
+
+Wrap list items with **ProductCard** inside the section slot or compose cards in your controller/template as needed.
+
+## Cart drawer (optional)
+
+**CartDrawerQuickview** uses Stimulus for open/close state. Ensure Stimulus and AssetMapper are enabled (Flex default).
+
+```twig
+<twig:CartDrawerQuickview :open="false" title="Your cart" />
+```
+
+See [Cart drawer quickview](components/cart-drawer-quickview.md) for controller wiring.
 
 ## Next steps
 
-- [Usage](usage.md)
-- [Configuration](configuration.md)
+- [Components](components.md) — full role index
+- [Usage](usage.md) — fragment prefixes and marketing cross-sell
+- [Verification](verification.md) — smoke checklist

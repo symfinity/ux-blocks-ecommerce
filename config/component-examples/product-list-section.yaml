@@ -1,0 +1,9 @@
+role: product-list-section
+twig_name: ProductListSection
+examples:
+  - id: default
+    title: Three columns
+    section: Variants
+    props:
+      heading: You may also like
+      columns: 3

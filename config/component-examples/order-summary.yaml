@@ -1,0 +1,9 @@
+role: order-summary
+twig_name: OrderSummary
+examples:
+  - id: default
+    title: Default
+    section: Variants
+    props:
+      subtotal: "58.00"
+      total: "62.50"

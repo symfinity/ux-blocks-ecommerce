@@ -55,14 +55,16 @@ final class ForbiddenDependenciesTest extends TestCase
     }
 
     #[Test]
-    public function composerDoesNotRequireToolkitOrMarketing(): void
+    public function composerRequiresCoreAndMarketing(): void
     {
         $json = json_decode((string) file_get_contents(\dirname(__DIR__, 2) . '/composer.json'), true, 512, JSON_THROW_ON_ERROR);
         $require = array_keys($json['require'] ?? []);
+        $suggest = array_keys($json['suggest'] ?? []);
 
         self::assertContains('symfinity/ux-blocks-core', $require);
+        self::assertContains('symfinity/ux-blocks-marketing', $require);
         self::assertNotContains('symfony/ux-toolkit', $require);
-        self::assertNotContains('symfinity/ux-blocks-marketing', $require);
+        self::assertNotContains('symfinity/ux-blocks-marketing', $suggest);
     }
 
     private function assertFileDoesNotContainForbidden(string $file): void

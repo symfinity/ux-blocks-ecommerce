@@ -1,0 +1,16 @@
+role: checkout-form-section
+twig_name: CheckoutFormSection
+examples:
+  - id: default
+    title: Default
+    section: Variants
+    props:
+      sections:
+        - title: Shipping
+          fields:
+            - name
+            - address
+        - title: Payment
+          fields:
+            - card
+      submitLabel: Place order

@@ -1,0 +1,13 @@
+role: category-filters-static
+twig_name: CategoryFiltersStatic
+examples:
+  - id: default
+    title: Default
+    section: Variants
+    props:
+      filters:
+        - label: Shirts
+          href: /shop/shirts
+          active: true
+        - label: Pants
+          href: /shop/pants

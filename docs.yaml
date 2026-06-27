@@ -11,12 +11,22 @@ sidebar:
   - troubleshooting
   - upgrade
   - usage
+  - verification
 
 slices:
   - symfony: "7.4"
     sources:
       - components.md
-      - components/README.md
+      - components/cart-drawer-quickview.md
+      - components/category-filters-static.md
+      - components/checkout-form-section.md
+      - components/order-history.md
+      - components/order-summary.md
+      - components/product-card.md
+      - components/product-list-section.md
+      - components/product-overview.md
+      - components/promo-incentives.md
+      - components/shopping-cart-layout.md
       - configuration.md
       - index.md
       - installation.md
@@ -25,3 +35,4 @@ slices:
       - troubleshooting.md
       - upgrade.md
       - usage.md
+      - verification.md

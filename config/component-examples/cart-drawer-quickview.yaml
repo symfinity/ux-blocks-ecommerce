@@ -1,0 +1,14 @@
+role: cart-drawer-quickview
+twig_name: CartDrawerQuickview
+examples:
+  - id: closed
+    title: Closed
+    section: Variants
+    props:
+      title: Your cart
+      open: false
+      items:
+        - label: Classic Tee
+          quantity: 2
+          unitPrice: "29.00"
+          lineTotal: "58.00"

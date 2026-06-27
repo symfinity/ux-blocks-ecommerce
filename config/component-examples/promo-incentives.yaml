@@ -1,0 +1,9 @@
+role: promo-incentives
+twig_name: PromoIncentives
+examples:
+  - id: default
+    title: Free shipping
+    section: Variants
+    props:
+      title: Free shipping
+      message: Orders over 50 EUR ship free this week.

@@ -1,0 +1,15 @@
+role: product-overview
+twig_name: ProductOverview
+examples:
+  - id: default
+    title: Default
+    section: Variants
+    props:
+      title: Classic Tee
+      description: Soft cotton everyday shirt.
+      price: "29.00"
+      images:
+        - /assets/tee-front.jpg
+      options:
+        - label: Size M
+        - label: Colour Navy
