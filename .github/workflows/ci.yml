@@ -1,6 +1,7 @@
 name: CI
 
 # Matrix: maintained PHP x maintained Symfony (floor 7.4.*).
+# Tier B — runtime symfinity/* from Packagist (^0.1); no VCS repository overrides.
 # Regenerated 2026-06-27 — refresh: split-mirror-docs/scripts/fetch-ci-matrix.sh --gha-json --package-php='>=8.2'
 
 on:
@@ -39,19 +40,6 @@ jobs:
           extensions: mbstring, xml, ctype, iconv, intl, curl
           coverage: none
           tools: composer:v2
-
-      - name: Configure Composer GitHub OAuth
-        run: composer config --global github-oauth.github.com "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Resolve Symfinity siblings from GitHub mirrors
-        run: |
-          composer config --unset repositories
-          for repo in ux-blocks ux-blocks-core ux-blocks-marketing; do
-            composer config "repositories.symfinity-${repo}" "{\"type\":\"vcs\",\"url\":\"https://github.com/symfinity/${repo}\"}"
-          done
-          composer require --no-update \
-            'symfinity/ux-blocks-core:^0.1' \
-            'symfinity/ux-blocks-marketing:dev-main'
 
       - name: Pin Symfony ${{ matrix.symfony }}
         run: |
