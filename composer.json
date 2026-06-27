@@ -29,22 +29,22 @@
         "php": ">=8.2",
         "symfinity/ux-blocks-core": "^0.1",
         "symfinity/ux-blocks-marketing": "^0.1",
-        "symfony/browser-kit": "^8.1",
-        "symfony/config": "^8.1",
-        "symfony/css-selector": "^8.1",
-        "symfony/dependency-injection": "^8.1",
-        "symfony/framework-bundle": "^8.1",
-        "symfony/http-foundation": "^8.1",
-        "symfony/http-kernel": "^8.1",
+        "symfony/config": "^7.4||^8.0",
+        "symfony/dependency-injection": "^7.4||^8.0",
+        "symfony/framework-bundle": "^7.4||^8.0",
+        "symfony/http-foundation": "^7.4||^8.0",
+        "symfony/http-kernel": "^7.4||^8.0",
         "symfony/stimulus-bundle": "^2.0|^3.0",
-        "symfony/twig-bundle": "^8.1",
+        "symfony/twig-bundle": "^7.4||^8.0",
         "symfony/ux-twig-component": "^2.0|^3.0",
-        "symfony/yaml": "^8.1"
+        "symfony/yaml": "^7.4||^8.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-symfony": "^2.0",
-        "phpunit/phpunit": "^10.5 || ^11.0"
+        "phpunit/phpunit": "^10.5 || ^11.0",
+        "symfony/browser-kit": "^7.4||^8.0",
+        "symfony/css-selector": "^7.4||^8.0"
     },
     "autoload": {
         "psr-4": {
