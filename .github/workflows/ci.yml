@@ -12,6 +12,8 @@ on:
 jobs:
   qa:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       fail-fast: false
       matrix:
@@ -38,15 +40,18 @@ jobs:
           coverage: none
           tools: composer:v2
 
+      - name: Configure Composer GitHub OAuth
+        run: composer config --global github-oauth.github.com "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Resolve Symfinity siblings from GitHub mirrors
         run: |
           composer config --unset repositories
-          for repo in ux-blocks-core ux-blocks-marketing; do
+          for repo in ux-blocks ux-blocks-core ux-blocks-marketing; do
             composer config "repositories.symfinity-${repo}" "{\"type\":\"vcs\",\"url\":\"https://github.com/symfinity/${repo}\"}"
           done
           composer require --no-update \
             'symfinity/ux-blocks-core:^0.1' \
-            'symfinity/ux-blocks-marketing:^0.1'
+            'symfinity/ux-blocks-marketing:dev-main'
 
       - name: Pin Symfony ${{ matrix.symfony }}
         run: |
