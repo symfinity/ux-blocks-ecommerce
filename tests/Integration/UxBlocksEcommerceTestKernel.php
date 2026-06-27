@@ -52,6 +52,21 @@ final class UxBlocksEcommerceTestKernel extends Kernel
             'form' => false,
         ]);
 
+        $container->extension('twig_component', [
+            'anonymous_template_directory' => 'components',
+            'defaults' => [
+                'Symfinity\\UxBlocksCore\\' => [
+                    'template_directory' => 'components',
+                    'name_prefix' => '',
+                ],
+                'Symfinity\\UxBlocksMarketing\\' => [
+                    'template_directory' => 'components',
+                    'name_prefix' => '',
+                ],
+                'Symfinity\\UxBlocksEcommerce\\Twig\\Components\\' => 'components',
+            ],
+        ]);
+
         $container->extension('twig', [
             'paths' => [
                 \dirname(__DIR__) . '/templates' => 'UxBlocksEcommerceTest',
