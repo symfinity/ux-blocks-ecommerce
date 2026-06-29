@@ -33,7 +33,7 @@ Variant previews render from `config/component-examples/cart-drawer-quickview.ya
 
 ## Stimulus
 
-This role uses interaction **`stl`** — package Stimulus controller handles drawer visibility. See catalog contract [cart-drawer-stimulus](https://github.com/symfinity/symfinity/blob/main/specs/symfinity/symfinity/3-ux-component-catalog/contracts/cart-drawer-stimulus.md) for behavior notes.
+This role uses interaction **`stl`** — the packaged `cart-drawer` Stimulus controller opens and closes the slide-over panel, traps focus while open, dismisses on **Escape** or backdrop click, and restores focus to the trigger on close.
 
 ## API Reference
 
