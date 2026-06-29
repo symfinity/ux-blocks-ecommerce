@@ -1,9 +1,0 @@
-role: product-card
-twig_name: ProductCard
-examples:
-  - id: default
-    title: Default
-    section: Variants
-    props:
-      title: Classic Tee
-      price: "29.00"
