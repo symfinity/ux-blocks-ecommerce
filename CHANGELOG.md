@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **Grouped component examples** — all ten `config/component-examples/*.yaml` manifests use `groups[]` with `slot_twig` for symfinity-docs handbook SSR
-- **Role CSS cascade** — committed `blocks-ecommerce.css` and `BlocksEcommerceCssProvider::stylesheet()` wrap tier output in `@layer blocks.ecommerce` for ui-kernel layer ordering
+- **Role CSS cascade** — committed `blocks-ecommerce.css` and `BlocksEcommerceCssProvider::stylesheet()` wrap tier output in `@layer blocks.ecommerce` via local `TierCascadeLayerWrap` (no ui-kernel runtime dependency; split mirror PHPStan clean)
 - **PHPUnit bootstrap** — `tests/bootstrap.php` resolves monorepo or split-mirror Composer autoload; optional `tests/bootstrap.local.php` hook
 - Handbook: quickstart documents optional ui-kernel vs inline tier CSS; verification cross-links the no-kernel styling path
 
