@@ -1,5 +1,7 @@
 # Verification
 
+**Integration profile:** P2 — embed (10 shop Twig tags; marketing transitive).
+
 Checks after installing **symfinity/ux-blocks-ecommerce** in a Symfony app.
 
 ## Local commands
@@ -37,7 +39,7 @@ composer show symfinity/ux-blocks-marketing
 
 Marketing **must** appear in the dependency tree without a second require line.
 
-Add ui-kernel theme CSS to your layout, then render:
+Add ui-kernel theme CSS to your layout (recommended), **or** inline tier stylesheets — see [Configuration](configuration.md#styling-without-ui-kernel). Then render:
 
 ```twig
 <twig:ProductOverview title="Demo" price="19.00" />

@@ -1,9 +1,12 @@
 role: order-summary
 twig_name: OrderSummary
-examples:
-  - id: default
-    title: Default
+groups:
+  - id: variants
     section: Variants
-    props:
-      subtotal: "58.00"
-      total: "62.50"
+    layout: stack
+    items:
+      - id: default
+        label: Default
+        props: {}
+        slot_twig: |
+          <twig:OrderSummary headline="{{ lorem_title() }}" />

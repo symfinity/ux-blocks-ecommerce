@@ -1,9 +1,12 @@
 role: product-list-section
 twig_name: ProductListSection
-examples:
-  - id: default
-    title: Three columns
+groups:
+  - id: variants
     section: Variants
-    props:
-      heading: You may also like
-      columns: 3
+    layout: stack
+    items:
+      - id: default
+        label: "Three columns"
+        props: {}
+        slot_twig: |
+          <twig:ProductListSection headline="{{ lorem_title() }}" columns="3" />

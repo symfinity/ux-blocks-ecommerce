@@ -4,7 +4,9 @@ Minimal storefront page with product overview and a related-products list.
 
 ## Theme CSS
 
-For styled output, include ui-kernel generated CSS in your layout (see [Configuration](configuration.md)).
+**Recommended:** include ui-kernel generated CSS — see [Configuration](configuration.md).
+
+**Without ui-kernel:** inline core + marketing + ecommerce stylesheets — [Configuration — styling without ui-kernel](configuration.md#styling-without-ui-kernel).
 
 ## Render components
 

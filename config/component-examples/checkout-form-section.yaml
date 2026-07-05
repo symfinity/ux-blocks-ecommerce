@@ -1,18 +1,12 @@
 role: checkout-form-section
 twig_name: CheckoutFormSection
-examples:
-  - id: default
-    title: Default
+groups:
+  - id: variants
     section: Variants
-    props:
-      sections:
-        - id: shipping
-          title: Shipping
-          fields:
-            - name
-            - address
-        - id: payment
-          title: Payment
-          fields:
-            - card
-      submitLabel: Place order
+    layout: stack
+    items:
+      - id: default
+        label: Default
+        props: {}
+        slot_twig: |
+          <twig:CheckoutFormSection headline="{{ lorem_title() }}" />

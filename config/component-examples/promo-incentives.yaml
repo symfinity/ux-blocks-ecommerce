@@ -1,9 +1,12 @@
 role: promo-incentives
 twig_name: PromoIncentives
-examples:
-  - id: default
-    title: Free shipping
+groups:
+  - id: variants
     section: Variants
-    props:
-      title: Free shipping
-      message: Orders over 50 EUR ship free this week.
+    layout: stack
+    items:
+      - id: default
+        label: "Free shipping"
+        props: {}
+        slot_twig: |
+          <twig:PromoIncentives title="{{ lorem_title() }}" message="{{ lorem_sentence() }}" />

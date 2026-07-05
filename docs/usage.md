@@ -16,7 +16,7 @@ Use marketing sections for landing pages and ecommerce sections for shop flows o
 
 ```twig
 {# marketing — installed transitively #}
-<twig:Hero title="Summer sale" />
+<twig:Hero headline="Summer sale" primaryActionLabel="Shop now" primaryActionHref="/shop" />
 
 {# ecommerce #}
 <twig:ProductListSection heading="Featured" />

@@ -1,13 +1,12 @@
 role: shopping-cart-layout
 twig_name: ShoppingCartLayout
-examples:
-  - id: with-items
-    title: With line items
+groups:
+  - id: variants
     section: Variants
-    props:
-      items:
-        - label: Classic Tee
-          quantity: 1
-          unitPrice: "29.00"
-          lineTotal: "29.00"
-      emptyMessage: Your cart is empty.
+    layout: stack
+    items:
+      - id: with-items
+        label: "With line items"
+        props: {}
+        slot_twig: |
+          <twig:ShoppingCartLayout headline="{{ lorem_title() }}" />

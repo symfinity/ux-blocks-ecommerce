@@ -1,9 +1,12 @@
 role: product-card
 twig_name: ProductCard
-examples:
-  - id: default
-    title: Default
+groups:
+  - id: variants
     section: Variants
-    props:
-      title: Classic Tee
-      price: "29.00"
+    layout: stack
+    items:
+      - id: default
+        label: Default
+        props: {}
+        slot_twig: |
+          <twig:ProductCard title="{{ lorem_title() }}" price="29.00" />

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Symfinity\UxBlocksEcommerce\Css;
 
+use Symfinity\UiKernel\Css\CascadeLayerOrder;
+use Symfinity\UiKernel\Css\CascadeLayerWrap;
+
 final class BlocksEcommerceCssProvider
 {
     public function __construct(
@@ -23,6 +26,6 @@ final class BlocksEcommerceCssProvider
             return '';
         }
 
-        return (string) file_get_contents($bundle);
+        return CascadeLayerWrap::wrap(CascadeLayerOrder::BLOCKS_ECOMMERCE, (string) file_get_contents($bundle));
     }
 }

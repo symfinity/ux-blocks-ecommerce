@@ -26,6 +26,18 @@ Flex recipes for core and marketing tiers register their bundles; ecommerce adds
 
 Shop section styling uses kernel tokens when **ui-kernel** is present. Headless installs render semantic markup without theme CSS.
 
+## Styling without ui-kernel
+
+Inline tier CSS in your layout when ui-kernel is not installed:
+
+```twig
+<style id="ux-blocks-core-css">{{ ux_blocks_core_stylesheet()|raw }}</style>
+<style id="ux-blocks-marketing-css">{{ ux_blocks_marketing_stylesheet()|raw }}</style>
+<style id="ux-blocks-ecommerce-css">{{ ux_blocks_ecommerce_stylesheet()|raw }}</style>
+```
+
+Marketing stylesheet comes transitively via `symfinity/ux-blocks-marketing`.
+
 ## Marketing dependency
 
 `symfinity/ux-blocks-marketing` is a **hard require**. Bundle order and Flex registration are Composer-managed — do not duplicate marketing in `suggest`.

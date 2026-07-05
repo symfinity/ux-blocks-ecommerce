@@ -1,15 +1,12 @@
 role: product-overview
 twig_name: ProductOverview
-examples:
-  - id: default
-    title: Default
+groups:
+  - id: variants
     section: Variants
-    props:
-      title: Classic Tee
-      description: Soft cotton everyday shirt.
-      price: "29.00"
-      images:
-        - /assets/tee-front.jpg
-      options:
-        - label: Size M
-        - label: Colour Navy
+    layout: stack
+    items:
+      - id: default
+        label: Default
+        props: {}
+        slot_twig: |
+          <twig:ProductOverview title="{{ lorem_title() }}" price="49.00" description="{{ lorem_sentence() }}" />

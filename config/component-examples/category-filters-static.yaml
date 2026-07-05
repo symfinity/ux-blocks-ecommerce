@@ -1,13 +1,12 @@
 role: category-filters-static
 twig_name: CategoryFiltersStatic
-examples:
-  - id: default
-    title: Default
+groups:
+  - id: variants
     section: Variants
-    props:
-      filters:
-        - label: Shirts
-          name: shirts
-          checked: true
-        - label: Pants
-          name: pants
+    layout: stack
+    items:
+      - id: default
+        label: Default
+        props: {}
+        slot_twig: |
+          <twig:CategoryFiltersStatic headline="{{ lorem_title() }}" />
