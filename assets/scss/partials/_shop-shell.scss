@@ -1,0 +1,8 @@
+@use '../_shared/mixins' as mixins;
+
+@include mixins.each-shop-shell-role;
+
+[data-ui-role='price'] {
+  font-weight: var(--ui-font-weight-semibold);
+  color: var(--ui-color-text);
+}

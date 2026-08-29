@@ -1,0 +1,82 @@
+{
+    "name": "symfinity/ux-blocks-ecommerce",
+    "description": "Shop section Twig components",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "homepage": "https://github.com/symfinity/ux-blocks-ecommerce",
+    "support": {
+        "issues": "https://github.com/symfinity/ux-blocks-ecommerce/issues",
+        "source": "https://github.com/symfinity/ux-blocks-ecommerce",
+        "docs": "https://docs.symfinity.dev/ux-blocks-ecommerce"
+    },
+    "authors": [
+        {
+            "name": "Symfinity",
+            "email": "dev@symfinity.net",
+            "homepage": "https://symfinity.net/"
+        }
+    ],
+    "keywords": [
+        "symfony",
+        "symfony-bundle",
+        "symfony-ux",
+        "twig-components",
+        "ux-blocks",
+        "ecommerce",
+        "design-system"
+    ],
+    "require": {
+        "php": ">=8.2",
+        "symfinity/ux-blocks-core": "^0.1",
+        "symfinity/ux-blocks-marketing": "^0.1",
+        "symfony/config": "^7.4||^8.0",
+        "symfony/dependency-injection": "^7.4||^8.0",
+        "symfony/framework-bundle": "^7.4||^8.0",
+        "symfony/http-foundation": "^7.4||^8.0",
+        "symfony/http-kernel": "^7.4||^8.0",
+        "symfony/stimulus-bundle": "^2.0|^3.0",
+        "symfony/twig-bundle": "^7.4||^8.0",
+        "symfony/ux-twig-component": "^2.0|^3.0",
+        "symfony/yaml": "^7.4||^8.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-symfony": "^2.0",
+        "phpunit/phpunit": "^10.5 || ^11.0",
+        "symfony/browser-kit": "^7.4||^8.0",
+        "symfony/css-selector": "^7.4||^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Symfinity\\UxBlocksEcommerce\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Symfinity\\UxBlocksEcommerce\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml.dist",
+        "phpstan": "phpstan analyse --memory-limit=512M"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/serotoninja"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        },
+        "symfony": {
+            "require": "^7.4||^8.0"
+        }
+    }
+}

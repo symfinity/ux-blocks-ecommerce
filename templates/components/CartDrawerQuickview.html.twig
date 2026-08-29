@@ -1,0 +1,44 @@
+<div
+    data-ui-role="cart-drawer-quickview"
+    data-ui-fragment="blocks.shop.cart-drawer-quickview"
+    data-controller="symfony--ux-blocks-ecommerce--cart-drawer"
+    {{ attributes }}
+>
+    <button
+        type="button"
+        data-symfony--ux-blocks-ecommerce--cart-drawer-target="trigger"
+        aria-expanded="false"
+        aria-controls="ux-blocks-ecommerce-cart-drawer-panel"
+        data-action="click->symfony--ux-blocks-ecommerce--cart-drawer#open"
+    >
+        {{ title }}
+    </button>
+    <div
+        id="ux-blocks-ecommerce-cart-drawer-panel"
+        data-symfony--ux-blocks-ecommerce--cart-drawer-target="panel"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="ux-blocks-ecommerce-cart-drawer-title"
+        hidden
+    >
+        <h2 id="ux-blocks-ecommerce-cart-drawer-title">{{ title }}</h2>
+        <ul>
+            {% for item in items %}
+                <li>
+                    <span>{{ item.label }}</span>
+                    <span>{{ item.quantity }} × {{ item.unitPrice }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <button
+            type="button"
+            data-symfony--ux-blocks-ecommerce--cart-drawer-target="close"
+            data-action="click->symfony--ux-blocks-ecommerce--cart-drawer#close"
+        >
+            Close
+        </button>
+    </div>
+    <div data-symfony--ux-blocks-ecommerce--cart-drawer-target="backdrop" hidden></div>
+    {% block content %}{% endblock %}
+</div>

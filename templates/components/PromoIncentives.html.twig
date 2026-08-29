@@ -1,0 +1,12 @@
+<aside
+    data-ui-role="promo-incentives"
+    data-ui-fragment="blocks.shop.promo-incentives"
+    {{ attributes }}
+>
+    {% if title %}<h2>{{ title }}</h2>{% endif %}
+    {% if message %}<p>{{ message }}</p>{% endif %}
+    {% if ctaLabel and ctaHref %}
+        <twig:Button as="a" href="{{ ctaHref }}">{{ ctaLabel }}</twig:Button>
+    {% endif %}
+    {% block content %}{% endblock %}
+</aside>

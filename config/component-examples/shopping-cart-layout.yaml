@@ -1,0 +1,12 @@
+role: shopping-cart-layout
+twig_name: ShoppingCartLayout
+groups:
+  - id: variants
+    section: Variants
+    layout: stack
+    items:
+      - id: with-items
+        label: "With line items"
+        props: {}
+        slot_twig: |
+          <twig:ShoppingCartLayout headline="{{ lorem_title() }}" />

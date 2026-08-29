@@ -1,0 +1,12 @@
+role: cart-drawer-quickview
+twig_name: CartDrawerQuickview
+groups:
+  - id: variants
+    section: Variants
+    layout: stack
+    items:
+      - id: closed
+        label: Closed
+        props: {}
+        slot_twig: |
+          <twig:CartDrawerQuickview title="{{ lorem_title() }}" />

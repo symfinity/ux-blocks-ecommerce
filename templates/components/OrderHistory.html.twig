@@ -1,0 +1,21 @@
+<section
+    data-ui-role="order-history"
+    data-ui-fragment="blocks.shop.order-history"
+    {{ attributes }}
+>
+    <ul>
+        {% for order in orders %}
+            <li>
+                {% if order.href|default('') %}
+                    <a href="{{ order.href }}">Order {{ order.id }}</a>
+                {% else %}
+                    <span>Order {{ order.id }}</span>
+                {% endif %}
+                <span>{{ order.date }}</span>
+                <span data-ui-role="status">{{ order.status }}</span>
+                <span data-ui-role="total">{{ order.total }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    {% block content %}{% endblock %}
+</section>

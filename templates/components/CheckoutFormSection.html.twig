@@ -1,0 +1,16 @@
+<section
+    data-ui-role="checkout-form-section"
+    data-ui-fragment="blocks.shop.checkout-form-section"
+    {{ attributes }}
+>
+    <form method="post" action="#">
+        {% for section in sections %}
+            <fieldset id="{{ section.id }}">
+                <legend>{{ section.title }}</legend>
+                {% block section_content %}{% endblock %}
+            </fieldset>
+        {% endfor %}
+        {% block content %}{% endblock %}
+        <twig:Button type="submit">{{ submitLabel }}</twig:Button>
+    </form>
+</section>

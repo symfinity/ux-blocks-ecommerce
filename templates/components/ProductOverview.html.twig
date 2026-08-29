@@ -1,0 +1,33 @@
+<section
+    data-ui-role="product-overview"
+    data-ui-fragment="blocks.shop.product-overview"
+    {{ attributes }}
+>
+    {% if images|length > 0 %}
+        <div data-ui-role="product-gallery" data-ui-slot="gallery">
+            {% for image in images %}
+                <img src="{{ image }}" alt="" />
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div data-ui-role="stack" data-ui-gap="md" data-ui-slot="details">
+        {% if title %}
+            <h1 data-ui-role="typography" data-ui-variant="h1">{{ title }}</h1>
+        {% endif %}
+        {% if description %}
+            <p data-ui-role="typography" data-ui-variant="p">{{ description }}</p>
+        {% endif %}
+        {% if price %}
+            <p data-ui-role="price">{{ price }}</p>
+        {% endif %}
+        {% if options|length > 0 %}
+            <ul data-ui-role="list">
+                {% for option in options %}
+                    <li data-ui-role="typography" data-ui-variant="p">{{ option.label }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <twig:Button>{{ addToCartLabel }}</twig:Button>
+    </div>
+    {% block content %}{% endblock %}
+</section>

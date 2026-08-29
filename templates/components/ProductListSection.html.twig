@@ -1,0 +1,11 @@
+<section
+    data-ui-role="product-list-section"
+    data-ui-fragment="blocks.shop.product-list-section"
+    data-ui-columns="{{ columns }}"
+    {{ attributes }}
+>
+    {% if heading %}<h2>{{ heading }}</h2>{% endif %}
+    <div data-ui-role="product-grid">
+        {% block content %}{% endblock %}
+    </div>
+</section>

@@ -1,0 +1,11 @@
+role: order-summary
+twig_name: OrderSummary
+groups:
+  - id: variants
+    section: Variants
+    layout: stack
+    items:
+      - id: default
+        props: {}
+        slot_twig: |
+          <twig:OrderSummary headline="{{ lorem_title() }}" />

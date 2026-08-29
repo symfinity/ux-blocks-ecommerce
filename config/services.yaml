@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Symfinity\UxBlocksEcommerce\:
+    resource: '../src/'
+    exclude:
+      - '../src/SymfinityUxBlocksEcommerceBundle.php'
+      - '../src/DependencyInjection/'
+
+  Symfinity\UxBlocksEcommerce\Css\BlocksEcommerceCssProvider:
+    arguments:
+      $packageDir: '%ux_blocks_ecommerce.package_dir%'

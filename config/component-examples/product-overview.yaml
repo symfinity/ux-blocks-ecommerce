@@ -1,0 +1,11 @@
+role: product-overview
+twig_name: ProductOverview
+groups:
+  - id: variants
+    section: Variants
+    layout: stack
+    items:
+      - id: default
+        props: {}
+        slot_twig: |
+          <twig:ProductOverview title="{{ lorem_title() }}" price="49.00" description="{{ lorem_sentence() }}" />

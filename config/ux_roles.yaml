@@ -1,0 +1,83 @@
+ux_role_registry: "1.4"
+registry_prefix: blocks.shop
+roles:
+  - role: product-overview
+    twig_component: ProductOverview
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\ProductOverview
+    fragment_id: blocks.shop.product-overview
+    fragment_pattern: "blocks.shop.product-overview.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: product-list-section
+    twig_component: ProductListSection
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\ProductListSection
+    fragment_id: blocks.shop.product-list-section
+    fragment_pattern: "blocks.shop.product-list-section.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: product-card
+    twig_component: ProductCard
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\ProductCard
+    fragment_id: blocks.shop.product-card
+    fragment_pattern: "blocks.shop.product-card.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: shopping-cart-layout
+    twig_component: ShoppingCartLayout
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\ShoppingCartLayout
+    fragment_id: blocks.shop.shopping-cart-layout
+    fragment_pattern: "blocks.shop.shopping-cart-layout.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: checkout-form-section
+    twig_component: CheckoutFormSection
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\CheckoutFormSection
+    fragment_id: blocks.shop.checkout-form-section
+    fragment_pattern: "blocks.shop.checkout-form-section.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: category-filters-static
+    twig_component: CategoryFiltersStatic
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\CategoryFiltersStatic
+    fragment_id: blocks.shop.category-filters-static
+    fragment_pattern: "blocks.shop.category-filters-static.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: order-summary
+    twig_component: OrderSummary
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\OrderSummary
+    fragment_id: blocks.shop.order-summary
+    fragment_pattern: "blocks.shop.order-summary.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: order-history
+    twig_component: OrderHistory
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\OrderHistory
+    fragment_id: blocks.shop.order-history
+    fragment_pattern: "blocks.shop.order-history.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: promo-incentives
+    twig_component: PromoIncentives
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\PromoIncentives
+    fragment_id: blocks.shop.promo-incentives
+    fragment_pattern: "blocks.shop.promo-incentives.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: cart-drawer-quickview
+    twig_component: CartDrawerQuickview
+    php_class: Symfinity\UxBlocksEcommerce\Twig\Components\CartDrawerQuickview
+    fragment_id: blocks.shop.cart-drawer-quickview
+    fragment_pattern: "blocks.shop.cart-drawer-quickview.{n}"
+    interaction: stl
+    stage: A
+    status: shipped
