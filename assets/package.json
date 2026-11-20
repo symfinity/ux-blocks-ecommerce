@@ -1,0 +1,12 @@
+{
+    "name": "@symfinity/ux-blocks-ecommerce",
+    "symfony": {
+        "controllers": {
+            "cart-drawer": {
+                "main": "controllers/cart-drawer_controller.js",
+                "fetch": "eager",
+                "enabled": true
+            }
+        }
+    }
+}

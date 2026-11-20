@@ -1,5 +1,15 @@
 # Upgrade
 
+## 0.1.3
+
+The cart drawer uses the Stimulus name this package registers (`symfinity--ux-blocks-ecommerce--cart-drawer`). The template no longer emits `symfony--ux-blocks-ecommerce--cart-drawer`. `assets/package.json` registers that controller with AssetMapper.
+
+```bash
+composer update symfinity/ux-blocks-ecommerce
+```
+
+After upgrade, clear the Symfony cache and hard-refresh the browser so the controller script reloads. Custom scripts that still target `symfony--ux-blocks-ecommerce--cart-drawer` need the `symfinity--` name.
+
 ## 0.1.2
 
 Patch release after [v0.1.1](https://github.com/symfinity/ux-blocks-ecommerce/releases/tag/v0.1.1). OOTB handbook verification, grouped component examples, CSS cascade layers, and inline stylesheet helper — no shop component API changes.

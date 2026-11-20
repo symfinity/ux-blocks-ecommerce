@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-11-20
+
+### Fixed
+
+- The cart drawer uses the Stimulus name this package registers (`symfinity--ux-blocks-ecommerce--cart-drawer`). `assets/package.json` registers the `cart-drawer` controller with AssetMapper. The template no longer emits `symfony--ux-blocks-ecommerce--cart-drawer`
+- PHPUnit bootstrap registers this package's PSR-4 prefixes from `composer.json` after loading the monorepo or package autoload, and narrows the decoded autoload sections before reading `psr-4`
+
 ## [0.1.2] - 2026-07-05
 
 ### Added

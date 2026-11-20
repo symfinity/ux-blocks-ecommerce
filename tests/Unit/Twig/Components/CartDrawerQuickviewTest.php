@@ -19,9 +19,9 @@ final class CartDrawerQuickviewTest extends ComponentTestCase
         ]);
 
         $this->assertRootAttributes($html, 'cart-drawer-quickview', 'blocks.shop.cart-drawer-quickview');
-        self::assertStringContainsString('data-controller="symfony--ux-blocks-ecommerce--cart-drawer"', $html);
+        self::assertStringContainsString('data-controller="symfinity--ux-blocks-ecommerce--cart-drawer"', $html);
         self::assertStringContainsString('aria-expanded="false"', $html);
-        self::assertStringContainsString('data-symfony--ux-blocks-ecommerce--cart-drawer-target="panel"', $html);
+        self::assertStringContainsString('data-symfinity--ux-blocks-ecommerce--cart-drawer-target="panel"', $html);
     }
 
     #[Test]

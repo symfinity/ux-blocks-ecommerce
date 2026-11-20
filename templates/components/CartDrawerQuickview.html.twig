@@ -1,21 +1,21 @@
 <div
     data-ui-role="cart-drawer-quickview"
     data-ui-fragment="blocks.shop.cart-drawer-quickview"
-    data-controller="symfony--ux-blocks-ecommerce--cart-drawer"
+    data-controller="symfinity--ux-blocks-ecommerce--cart-drawer"
     {{ attributes }}
 >
     <button
         type="button"
-        data-symfony--ux-blocks-ecommerce--cart-drawer-target="trigger"
+        data-symfinity--ux-blocks-ecommerce--cart-drawer-target="trigger"
         aria-expanded="false"
         aria-controls="ux-blocks-ecommerce-cart-drawer-panel"
-        data-action="click->symfony--ux-blocks-ecommerce--cart-drawer#open"
+        data-action="click->symfinity--ux-blocks-ecommerce--cart-drawer#open"
     >
         {{ title }}
     </button>
     <div
         id="ux-blocks-ecommerce-cart-drawer-panel"
-        data-symfony--ux-blocks-ecommerce--cart-drawer-target="panel"
+        data-symfinity--ux-blocks-ecommerce--cart-drawer-target="panel"
         role="dialog"
         aria-modal="true"
         aria-hidden="true"
@@ -33,12 +33,12 @@
         </ul>
         <button
             type="button"
-            data-symfony--ux-blocks-ecommerce--cart-drawer-target="close"
-            data-action="click->symfony--ux-blocks-ecommerce--cart-drawer#close"
+            data-symfinity--ux-blocks-ecommerce--cart-drawer-target="close"
+            data-action="click->symfinity--ux-blocks-ecommerce--cart-drawer#close"
         >
             Close
         </button>
     </div>
-    <div data-symfony--ux-blocks-ecommerce--cart-drawer-target="backdrop" hidden></div>
+    <div data-symfinity--ux-blocks-ecommerce--cart-drawer-target="backdrop" hidden></div>
     {% block content %}{% endblock %}
 </div>
